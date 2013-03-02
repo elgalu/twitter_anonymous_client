@@ -25,8 +25,6 @@ module Twitter
       def get_user_timeline_results(screen_name, count)
         path = "statuses/user_timeline.json"
         qry = []
-        qry << ['include_entities', 'true']
-        qry << ['include_rts', 'true']
         qry << ['screen_name', screen_name]
         qry << ['count', count.to_s]
         get(path, qry)

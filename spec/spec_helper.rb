@@ -8,6 +8,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start
 
 require 'twitter_anonymous_client'
+require 'webmock/rspec'
 
 # Require this file using `require "spec_helper"` within each of your specs
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
@@ -18,4 +19,9 @@ RSpec.configure do |config|
 
   # Run specs in random order to surface order dependencies.
   config.order = 'random'
+end
+
+def fixture(file)
+  fixtures_path = File.expand_path(File.join('..', 'fixtures'), __FILE__)
+  File.new(File.join(fixtures_path, file))
 end

@@ -33,5 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "yard", ">= 0.8.5.2"
   spec.add_development_dependency "simplecov", ">= 0.7.1"
   spec.add_development_dependency 'coveralls', '>= 0.5.8'
+  spec.add_development_dependency 'webmock', '>= 1.10.1'
 
 end
