@@ -13,7 +13,7 @@ module Twitter
           args = { id:         tweet['id'],
                    text:       tweet['text'],
                    created_at: tweet['created_at'] }
-          Tweet.new(args)
+          new(args)
         end
       end
     end

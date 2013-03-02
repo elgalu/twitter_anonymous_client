@@ -1,6 +1,5 @@
+require 'twitter/default'
 require 'twitter/tweet'
-
-require 'json'
 
 module Twitter
   module API
@@ -17,20 +16,20 @@ module Twitter
         count = opts[:count] || 1
         screen_name = screen_name.to_s
         # Work out
-        result = get_user_timeline_result(screen_name, count)
-        Twitter::Tweet.build_tweets parse(result)
+        results = get_user_timeline_results(screen_name, count)
+        Twitter::Tweet.build_tweets(results)
       end
 
       private
 
-      def get_user_timeline_result(screen_name, count)
-        url = "http://api.twitter.com/1/statuses/user_timeline.json"
-        query = "include_entities=true&include_rts=true&screen_name=#{screen_name}&count=#{count}"
-        get(url, query)
-      end
-
-      def parse(result)
-        JSON.parse(result)
+      def get_user_timeline_results(screen_name, count)
+        path = "statuses/user_timeline.json"
+        qry = []
+        qry << ['include_entities', 'true']
+        qry << ['include_rts', 'true']
+        qry << ['screen_name', screen_name]
+        qry << ['count', count.to_s]
+        get(path, qry)
       end
 
     end
