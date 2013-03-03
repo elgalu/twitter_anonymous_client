@@ -1,3 +1,4 @@
+# External
 require 'simplecov'
 require 'coveralls'
 
@@ -7,7 +8,10 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 ]
 SimpleCov.start
 
+# Internal
 require 'twitter_anonymous_client'
+
+# External
 require 'webmock/rspec'
 
 # Require this file using `require "spec_helper"` within each of your specs
@@ -22,6 +26,6 @@ RSpec.configure do |config|
 end
 
 def fixture(file)
-  fixtures_path = File.expand_path(File.join('..', 'fixtures'), __FILE__)
+  fixtures_path = File.expand_path(File.join('..', '..', 'fixtures'), __FILE__)
   File.new(File.join(fixtures_path, file))
 end

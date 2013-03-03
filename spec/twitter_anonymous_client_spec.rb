@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'support/spec_helper'
 
 describe TwitterAnonymousClient do
   it 'should have a version number' do

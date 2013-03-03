@@ -8,6 +8,8 @@ require 'json'
 module Twitter
   # @note Inspired from gems\twitter-4.5.0\spec\twitter\tweet_spec.rb
   class Client
+    ConnectionError = Class.new(StandardError)
+
     include Twitter::API::Timelines
 
     # Perform an HTTP GET request
@@ -36,9 +38,7 @@ module Twitter
     end
 
     def pute(uri, msg)
-      STDERR.puts msg
-      STDERR.puts "Request: #{uri.to_s}"
-      exit 1
+      raise ConnectionError.new("#{msg}\nRequest: #{uri.to_s}\n")
     end
   end
 end

@@ -1,7 +1,5 @@
 # TwitterAnonymousClient
 
-WIP (work in progress)
-
 [![Gem Version][GV img]][Gem Version]
 [![Build Status][BS img]][Build Status]
 [![Dependency Status][DS img]][Dependency Status]
