@@ -48,28 +48,5 @@ describe Twitter::Client do
       end
     end
 
-    context 'first tweet' do
-      it 'should be a Tweet' do
-        first_tweet.should be_a(Twitter::Tweet)
-      end
-
-      it 'should respond to id' do
-        first_tweet.should respond_to(:id)
-      end
-
-      it 'should respond to text' do
-        first_tweet.should respond_to(:text)
-      end
-
-      it 'should respond to created_at' do
-        first_tweet.should respond_to(:created_at)
-      end
-
-      it 'should contain proper text' do
-        first_tweet.should respond_to(:text)
-        first_tweet.text.should match(latest_tweet_text)
-      end
-    end
-
   end
 end

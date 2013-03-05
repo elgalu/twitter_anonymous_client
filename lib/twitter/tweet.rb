@@ -19,9 +19,10 @@ module Twitter
       #   #=> [#<Twitter::Tweet:0x07.. @id="3", @text="hello world", @created_at=#<DateTime: 2013-02-27>>]
       def build_tweets(ary)
         tweets = ary.map do |tweet|
-          args = { id:         tweet['id'],
-                   text:       tweet['text'],
-                   created_at: tweet['created_at'] }
+          args = { id:          tweet['id'],
+                   text:        tweet['text'],
+                   created_at:  tweet['created_at'],
+                   screen_name: tweet['user']['screen_name'] }
           new(args)
         end
       end
@@ -33,5 +34,10 @@ module Twitter
     attribute :id, String
     attribute :text, String
     attribute :created_at, DateTime
+    attribute :screen_name, String
+
+    def status_url
+      "https://twitter.com/#{screen_name}/status/#{id}"
+    end
   end
 end
