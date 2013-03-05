@@ -20,7 +20,7 @@ Twitter public (anonymous) client for old v1.0 API just to retrieve the last N u
 require 'twitter_anonymous_client'
 
 tweets = Twitter::Client.new.user_timeline('elgalu', count: 1)
-elgalu = tweets.first #=>  #<Twitter::Tweet:0x00.. @id="3076....
+elgalu = tweets.first #=>  #<Twitter::Tweet:0x00.. @id="3076....>
 elgalu.text #=> "Console Ruby debug is easy - Leo Gallucci's blog http://t.co/JUpUdyf5ts"
 ```
 

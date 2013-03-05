@@ -3,14 +3,18 @@ require 'twitter/tweet'
 
 module Twitter
   module API
-    # @note Inspired from gems\twitter-4.5.0\spec\twitter\api\timelines_spec.rb
+    # @note Inspired from twitter-4.5.0/spec/twitter/api/timelines_spec.rb
     module Timelines
 
-      # Get some user timeline by screen name
+      # Get some user timeline by screen name (last statuses)
+      #
+      # @param [String] screen_name the twitter user slug
+      # @param [Hash] opts the options to retrieve the statuses
+      # @option opts [Integer] :count The number of statuses to retrieve
       #
       # @example
-      #   user_timeline('DolarBlue', count: 1)
-      #
+      #   Twitter::Client.new.user_timeline('DolarBlue', count: 1)
+      #   #=> [#<Twitter::Tweet:0x011.. @id="308609..., @text="Dolar Paralelo: $7,84.....
       def user_timeline(screen_name, opts)
         # Sanitize arguments
         count = opts[:count] || 1
@@ -22,6 +26,8 @@ module Twitter
 
       private
 
+      # (see #user_timeline)
+      # @private
       def get_user_timeline_results(screen_name, count)
         path = "statuses/user_timeline.json"
         qry = []
