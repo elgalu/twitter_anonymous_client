@@ -1,7 +1,18 @@
-## [In git](https://github.com/elgalu/twitter_anonymous_client/compare/v1.0.1.0...HEAD)
+## [In git](https://github.com/elgalu/twitter_anonymous_client/compare/v1.0.2.0...HEAD)
 
 ### New Features
 * n/a
+
+### Bugfixes
+* n/a
+
+### Chores
+* n/a
+
+## [v1.0.2.0](https://github.com/elgalu/twitter_anonymous_client/tree/v1.0.2.0)
+
+### New Features
+* Added Client#last_tweet to get the last tweet given a screen name. (Leo Gallucci)
 
 ### Bugfixes
 * n/a
