@@ -7,7 +7,7 @@
 * n/a
 
 ### Chores
-* n/a
+* Added Client#last_tweet and Tweet#status_url to README.md. (Leo Gallucci)
 
 ## [v1.0.2.0](https://github.com/elgalu/twitter_anonymous_client/tree/v1.0.2.0)
 
