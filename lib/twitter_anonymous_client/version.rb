@@ -5,5 +5,5 @@ module TwitterAnonymousClient
   # The last 2 digits (c,d) are this gem version.
   #   c is a major update or any update that breaks this gem API.
   #   d is minor or bugfix update.
-  VERSION = "1.0.1.0"
+  VERSION = "1.0.2.0"
 end
