@@ -6,6 +6,10 @@
 [![Code Climate][CC img]][Code Climate]
 [![Coverage Status][CS img]][Coverage Status]
 
+## DEPRECATED
+
+Twitter API v1 has been [officially retired](https://dev.twitter.com/blog/api-v1-retirement-final-dates) so don't use this proof-of-concept gem anymore.
+
 ## Description
 
 Twitter public (anonymous) client for old v1.0 API just to retrieve the last N user statuses.
